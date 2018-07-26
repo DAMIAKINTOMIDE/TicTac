@@ -57,7 +57,11 @@ function makeGrid() {
 
 					setTimeout(function(){ alert(player_name+" wins");location.reload();},500);
 					
+				}else {
+					setTimeout(function(){ alert("Nobody wins");location.reload();},500);
 				}
+					
+				
 
 				 if( $("#box"+i).text() === "O"){
 					$('#box'+i).css("pointer-events","none");
