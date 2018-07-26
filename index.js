@@ -52,16 +52,14 @@ function makeGrid() {
 
 					setTimeout(function(){ alert(player_name+" wins");location.reload();},500);
 					
-				}else if($("#box3").text() === "X" && $("#box6").text()=== "X" && $("#box9").text() === "X" ||
+				}else if($("#box3").text() === "X" && $("#box6").text() === "X" && $("#box9").text() === "X" ||
 					$("#box3").text() === "O" && $("#box6").text() === "O" && $("#box9").text() === "O"){
 
 					setTimeout(function(){ alert(player_name+" wins");location.reload();},500);
 					
-				}else {
-					setTimeout(function(){ alert("Nobody wins");location.reload();},500);
 				}
-					
 				
+				nowin();
 
 				 if( $("#box"+i).text() === "O"){
 					$('#box'+i).css("pointer-events","none");
@@ -105,3 +103,14 @@ function makeGrid() {
 }
 
 	makeGrid();
+
+	let nowin = function (){
+		if((($("#box3").text() != $("#box6").text() !=  $("#box9").text()) && ($("#box3").text() != "" && $("#box6").text() != "" &&  $("#box9").text() != ""))
+					&& (($("#box1").text() != $("#box2").text() !=  $("#box3").text()) && ($("#box1").text() != "" && $("#box2").text() != "" &&  $("#box3").text() != ""))
+					&& (($("#box7").text() != $("#box8").text() !=  $("#box9").text()) && ($("#box7").text() != "" && $("#box8").text() != "" &&  $("#box9").text() != ""))
+					&& (($("#box1").text() != $("#box4").text() !=  $("#box7").text()) && ($("#box1").text() != "" && $("#box4").text() != "" &&  $("#box7").text() != ""))
+					&& (($("#box3").text() != $("#box6").text() !=  $("#box7").text()) && ($("#box3").text() != "" && $("#box6").text() != "" &&  $("#box7").text() != ""))
+					&& (($("#box1").text() != $("#box6").text() !=  $("#box9").text()) && ($("#box1").text() != "" && $("#box6").text() != "" &&  $("#box9").text() != ""))){
+					setTimeout(function(){ alert("Nobody wins");location.reload();},500);
+				}
+	}
